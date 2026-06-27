@@ -1,6 +1,7 @@
 <?php
 /**
  * Plugin Name:       Responsive Nav Menu for Elementor
+ * Plugin URI:        https://github.com/ValentynaBaranova/responsive-nav-menu-elementor-widget
  * Description:       Adds a "Responsive Nav Menu" Elementor widget that renders any WordPress menu as a responsive navigation with an accessible fullscreen mobile burger and collapsible submenus.
  * Version:           1.0.4
  * Requires at least: 5.8
