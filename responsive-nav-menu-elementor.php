@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name:       Responsive Nav Menu for Elementor
- * Plugin URI:        https://example.com/responsive-nav-menu-elementor
  * Description:       Adds a "Responsive Nav Menu" Elementor widget that renders any WordPress menu as a responsive navigation with an accessible fullscreen mobile burger and collapsible submenus.
  * Version:           1.0.4
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Valentyna Baranova
- * License:           GPL-2.0
+ * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       responsive-nav-menu-elementor
+ * Elementor tested up to: 3.25.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -159,17 +159,7 @@ function rnme_render_menu( $args = array() ) {
 	return ob_get_clean();
 }
 
-/**
- * Returns a nav menu walker that injects an icon into each top-level item.
- *
- * The walker class is declared lazily so that the parent Walker_Nav_Menu
- * class is guaranteed to be available (it is only loaded by WordPress on the
- * front end, after this plugin file is included).
- *
- * @param string $icon_html     Pre-rendered icon markup (e.g. a <span> with an SVG / <i>).
- * @param string $icon_position Either 'before' or 'after' the link text.
- * @return Walker_Nav_Menu
- */
+
 function rnme_get_nav_walker( $icon_html, $icon_position = 'before' ) {
 	if ( ! class_exists( 'RNME_Nav_Walker' ) ) {
 		class RNME_Nav_Walker extends Walker_Nav_Menu {

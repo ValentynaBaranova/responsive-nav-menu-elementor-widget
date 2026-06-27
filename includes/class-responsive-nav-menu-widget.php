@@ -65,6 +65,7 @@ class RNME_Menu_Widget extends Widget_Base {
 				array(
 					'type' => Controls_Manager::RAW_HTML,
 					'raw'  => sprintf(
+						/* translators: %s: link to the WordPress menus screen. */
 						esc_html__( 'There are no menus yet. %s', 'responsive-nav-menu-elementor' ),
 						'<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" target="_blank">' . esc_html__( 'Create one', 'responsive-nav-menu-elementor' ) . '</a>'
 					),
@@ -155,9 +156,9 @@ class RNME_Menu_Widget extends Widget_Base {
 
 	private function register_style_controls() {
 		$this->start_controls_section(
-			'section_style',
+			'section_style_links',
 			array(
-				'label' => esc_html__( 'Menu Style', 'responsive-nav-menu-elementor' ),
+				'label' => esc_html__( 'Main Links', 'responsive-nav-menu-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -230,12 +231,13 @@ class RNME_Menu_Widget extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'dropdown_heading',
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_style_dropdown',
 			array(
-				'label'     => esc_html__( 'Dropdown (Submenu)', 'responsive-nav-menu-elementor' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
+				'label' => esc_html__( 'Dropdown (Submenu)', 'responsive-nav-menu-elementor' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
 
@@ -362,12 +364,13 @@ class RNME_Menu_Widget extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'icon_heading',
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_style_icon',
 			array(
 				'label'     => esc_html__( 'Item Icon', 'responsive-nav-menu-elementor' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
+				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'item_icon[value]!' => '',
 				),
@@ -431,12 +434,13 @@ class RNME_Menu_Widget extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'burger_heading',
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_style_burger',
 			array(
-				'label'     => esc_html__( 'Mobile Burger', 'responsive-nav-menu-elementor' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
+				'label' => esc_html__( 'Mobile Burger', 'responsive-nav-menu-elementor' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
 
